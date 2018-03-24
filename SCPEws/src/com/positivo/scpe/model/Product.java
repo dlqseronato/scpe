@@ -9,8 +9,11 @@ public class Product {
 	public int getId() {
 		return id;
 	}
-	public void setId(int id) {
-		this.id = id;
+	public void setId(int id) throws IllegalArgumentException {
+		if(id > 0)
+			this.id = id;
+		else 
+			throw new IllegalArgumentException();
 	}
 	public String getDescription() {
 		return description;
@@ -28,13 +31,21 @@ public class Product {
 		return unitySellValue;
 	}
 	public void setUnitySellValue(double unitySellValue) {
-		this.unitySellValue = unitySellValue;
+		if (unitySellValue > 0) 
+			this.unitySellValue = unitySellValue;
+		else 
+			throw new IllegalArgumentException();
+
+
 	}
 	public double getUnityBuyValue() {
 		return unityBuyValue;
 	}
 	public void setUnityBuyValue(double unityBuyValue) {
-		this.unityBuyValue = unityBuyValue;
+		if (unityBuyValue > 0)
+			this.unityBuyValue = unityBuyValue;
+		else 
+			throw new IllegalArgumentException();
 	}
-	
+
 }

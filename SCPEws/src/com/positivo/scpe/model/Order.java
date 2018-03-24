@@ -9,35 +9,35 @@ public class Order {
 	private Date openDate;
 	private Date closeDate;
 	private List<OrderItem> orderItens;
-	
+
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	
+
 	public void addOrderItem(OrderItem orderItem){
 		this.orderItens.add(orderItem);
 	}
-	
+
 	public boolean removeOrderItem(OrderItem orderItem){
 		return this.orderItens.remove(orderItem);
 	}
-	
+
 	public double calculateTotalValue() throws IllegalArgumentException{
 		double totalValue = 0;
 		for (OrderItem orderItem : orderItens) {
 			totalValue += orderItem.getTotalValue();
 		}
-		if (totalValue > 0) {
+		if (totalValue > 0) 
 			return totalValue;
-		}else {
+		else 
 			throw new IllegalArgumentException();
-		}
-		
+
+
 	}
-	
+
 	public Customer getCustomer() {
 		return customer;
 	}
@@ -62,6 +62,6 @@ public class Order {
 	public void setOrderItens(List<OrderItem> orderItens) {
 		this.orderItens = orderItens;
 	}
-	
-	
+
+
 }
